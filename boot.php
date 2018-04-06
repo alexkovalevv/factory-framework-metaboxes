@@ -1,30 +1,35 @@
 <?php
-/**
- * Factory Metaboxes
- * 
- * Factory is an internal professional framework developed by OnePress Ltd
- * for own needs. Please don't use it to create your own independent plugins.
- * In future the one will be documentated and released for public.
- * 
- * @author Paul Kashtanoff <paul@byonepress.com>
- * @copyright (c) 2013, OnePress Ltd
- * 
- * @package core 
- * @since 1.0.0
- */
+	/**
+	 * Factory Metaboxes
+	 *
+	 * @author Alex Kovalev <alex.kovalevv@gmail.com>
+	 * @copyright (c) 2018, Webcraftic Ltd
+	 *
+	 * @package factory-metaboxes
+	 * @since 1.0.0
+	 */
 
-// module provides function only for the admin area
-if ( !is_admin() ) return;
+	// Exit if accessed directly
+	if( !defined('ABSPATH') ) {
+		exit;
+	}
 
-if (defined('FACTORY_METABOXES_000_LOADED')) return;
-define('FACTORY_METABOXES_000_LOADED', true);
+	// module provides function only for the admin area
+	if( !is_admin() ) {
+		return;
+	}
 
-define('FACTORY_METABOXES_000_DIR', dirname(__FILE__));
-define('FACTORY_METABOXES_000_URL', plugins_url(null,  __FILE__ ));
+	if( defined('FACTORY_METABOXES_000_LOADED') ) {
+		return;
+	}
+	define('FACTORY_METABOXES_000_LOADED', true);
 
-#comp merge
-require(FACTORY_METABOXES_000_DIR . '/metaboxes.php');
-require(FACTORY_METABOXES_000_DIR . '/metabox.class.php');
-require(FACTORY_METABOXES_000_DIR . '/includes/form-metabox.class.php');
-require(FACTORY_METABOXES_000_DIR . '/includes/publish-metabox.class.php');
-#endcomp
+	define('FACTORY_METABOXES_000_DIR', dirname(__FILE__));
+	define('FACTORY_METABOXES_000_URL', plugins_url(null, __FILE__));
+
+	#comp merge
+	require(FACTORY_METABOXES_000_DIR . '/metaboxes.php');
+	require(FACTORY_METABOXES_000_DIR . '/metabox.class.php');
+	require(FACTORY_METABOXES_000_DIR . '/includes/form-metabox.class.php');
+	require(FACTORY_METABOXES_000_DIR . '/includes/publish-metabox.class.php');
+	#endcomp
