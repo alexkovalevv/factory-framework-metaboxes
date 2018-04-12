@@ -90,7 +90,7 @@
 
 				$form = $this->getForm();
 
-				echo '<div class="factory-form-metabox">';
+				echo '<div class="factory-form-metabox factory-bootstrap-000">';
 				$this->beforeForm($form);
 				$form->html(array(
 					'css_class' => $this->css_class
@@ -123,7 +123,7 @@
 			/**
 			 * Method executed before rendering the form.
 			 */
-			public function beforeForm(FactoryForms000_Form $form)
+			public function beforeForm(Wbcr_FactoryForms000_Form $form)
 			{
 				return;
 			}
@@ -131,7 +131,7 @@
 			/**
 			 * Method executed after rendering the form.
 			 */
-			public function afterForm(FactoryForms000_Form $form)
+			public function afterForm(Wbcr_FactoryForms000_Form $form)
 			{
 				return;
 			}

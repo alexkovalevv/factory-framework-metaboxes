@@ -57,10 +57,11 @@
 			 * Registers a metabox by its class name.
 			 *
 			 * @since 1.0.0
-			 * @param string|object $className A metabox class name.
+			 * @param string|object $class_name_or_object
+			 * @param Wbcr_Factory000_Plugin $plugin
 			 * @return Wbcr_FactoryMetaboxes000_Metabox
 			 */
-			public static function register($class_name_or_object, $plugin)
+			public static function register($class_name_or_object, Wbcr_Factory000_Plugin $plugin)
 			{
 
 				if( is_string($class_name_or_object) ) {
