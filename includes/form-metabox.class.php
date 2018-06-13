@@ -23,13 +23,6 @@
 		 */
 		abstract class Wbcr_FactoryMetaboxes000_FormMetabox extends Wbcr_FactoryMetaboxes000_Metabox {
 
-			/**
-			 * A scope of metadata. By default the current class name used.
-			 *
-			 * @since 1.0.0
-			 * @var string
-			 */
-			public $scope;
 
 			/**
 			 * CSS class that addes to the form.
@@ -45,15 +38,18 @@
 			protected $provider;
 
 			/**
+			 * @var string
+			 */
+			private $scope;
+
+			/**
 			 * @param Wbcr_Factory000_Plugin $plugin
 			 */
 			public function __construct(Wbcr_Factory000_Plugin $plugin)
 			{
 				parent::__construct($plugin);
 
-				$this->scope = (!$this->scope)
-					? $this->formatCamelCase(get_class($this))
-					: $this->scope;
+				$this->scope = rtrim($this->plugin->getPrefix(), '_');
 			}
 
 			/**
