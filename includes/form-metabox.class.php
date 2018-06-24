@@ -23,7 +23,6 @@
 		 */
 		abstract class Wbcr_FactoryMetaboxes000_FormMetabox extends Wbcr_FactoryMetaboxes000_Metabox {
 
-
 			/**
 			 * CSS class that addes to the form.
 			 *
@@ -98,15 +97,26 @@
 			public function save($post_id)
 			{
 				$form = $this->getForm($post_id);
+
 				$this->onSavingForm($post_id);
 
 				$form->save();
+
+				$this->afterSavingForm($post_id);
 			}
 
 			/**
 			 * Extra custom actions after the form is saved.
 			 */
 			public function onSavingForm($post_id)
+			{
+				return;
+			}
+
+			/**
+			 * Extra custom actions after the form is saved.
+			 */
+			public function afterSavingForm($post_id)
 			{
 				return;
 			}
