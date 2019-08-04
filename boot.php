@@ -23,7 +23,7 @@ if ( defined( 'FACTORY_METABOXES_000_LOADED' ) ) {
 	return;
 }
 
-define( 'FACTORY_METABOXES_000_VERSION', '4.0.7' );
+define( 'FACTORY_METABOXES_000_VERSION', '4.0.9' );
 
 define( 'FACTORY_METABOXES_000_LOADED', true );
 
